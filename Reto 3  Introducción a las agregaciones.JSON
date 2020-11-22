@@ -1,0 +1,15 @@
+//Reto 3: Notación punto y arreglos
+//Bryand Javier Garcia Sigales
+//Usando la colección sample_airbnb.listingsAndReviews, mediante el uso de agregaciones, encontrar el número de publicaciones que tienen conexión a Internet, sea desde Wifi o desde cable (Ethernet).
+[
+  {
+    "$match": {
+      "amenities": {
+        "$in": [ "Internet", "Wifi", "Ethernet" ]
+      }
+    }
+  },
+  {
+    "$count": "Numero de casas con Internet"
+  }
+]
